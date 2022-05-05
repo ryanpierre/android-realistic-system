@@ -71,28 +71,45 @@ Some points you should consider in your research:
 - Can you trace the order in which the code runs? How do we get from the app launching into this onboarding page. Where can I find the onboarding page's source code ?
 - Which debugging tools are useful for following the flow? 
 
-<!-- 
+
 ### Challenge 3
+#### Objectives
+- Investigate and diagram the flow of a failing test. 
 
-/**
+Run the existing tests in the project. Are they all passing? 
 
-  This one should be a step more complex, either diagramming or implementation.
+Let's hone in on one test in particular for this challenge, to learn about the flow of this project. First, identify the failing test. 
 
-**/
+Try to gather relevant information about the failing test. Consider how your investigations could vary depending on who you'll present your findings to - consider three different hierarchies of context, one for each of: 
+1. A business analyst - the highest level explanation of what the test is for, and why it might be failing
+2. Another developer in your pod - describe the failing test in slightly more detail, as if you and another developer were to set out on making it pass. Can you get visibility over where the bug is? 
+2. A technical lead on your project, responsible for overseeing the technical progress of multiple development pods across the team. Is there anything else this failing test could impact? Does it concern any other pods? 
+
+Context we should consider here is:
+- Of what relevance to each of these parties the failing test is
+- What level of detail each of these parties will need to know about the failing test
+
+Depending on the team member, some information you might aim to capture and describe about the failing test is: 
+- What is the purpose of the test? 
+- What is the expected input and output of the method under test? 
+- What is your understanding of the code being run by this test? 
+- The flow of execution on running this test - diagramming can be of use here (try a sequence diagram). 
+- How could you understand and describe the network calls and data structures being used here? 
+- Why do you think the test is failing?
+
+Bonus: Once you've identified the cause of the failing test, try to get it passing. Consider what changes may be within your current remit - the source of the bug, or the test itself. 
 
 ### Challenge 4
 
-_Note: You won't actually add this to the main branch — this is just for
-investigation purposes._
+Objective: Investigate and diagram behaviour of methods influenced by `Activity` Lifecycle. 
 
-Make a change to the app so that:
+- Choose one of the main `Activity`s in the app, one of: `CategoryActivity`, `BaseActivity`, `AboutActivity`, or `ContributionsActivity`
+- Identify the `Activity` methods affected by the lifecycle
+- Write a sentence or two about what each method is doing for this particular `Activity` - this will require some research into what these methods are usually responsible for 
+- Create a flow chart to represent the lifecycle methods in your chosen `Activity`: represent the order in which each method is called when the feature is used by the user, and include your descriptions of their responsibilities next to each method
+- To do this, you can make use of breakpoints and print statements
 
-/** Propose a small but meaningful change here. **/
-
-Your job will require you to write tests, so write tests here.
-
-When you've done these exercises, let your coach know.
-
+<!--
 ## Tickets
 
 /**
